@@ -43,7 +43,8 @@ namespace dotnet_buildpack
         {
             var bitcoin = new BitcoinPrice();
             CurrentPrice price = await bitcoin.GetPriceAsync();
-            await context.Response.WriteAsync($"The current bitcoin price is {price.USD}");
+            string response = $"At {price.Updated} (GMT) the bitcoin price was {price.USD}";
+            await context.Response.WriteAsync(response);
         }
     }
 }
