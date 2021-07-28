@@ -26,5 +26,5 @@ steps:
   displayName: 'Push image'
   inputs:
     command: push
-    repository: idoflatow-sm-demos/pricingapp
+    repository: 'idoflatow-sm-demos/pricingapp'
     tags: v1
