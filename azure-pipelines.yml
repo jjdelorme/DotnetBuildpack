@@ -9,12 +9,11 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: BuildpacksInstaller@1
+  inputs:
+    buildpacksVersion: '0.16.0'
 - task: BuildpacksTask@1
   inputs:
     command: 'build'
     imageName: 'dotnet-buildpack'
     builder: 'gcr.io/buildpacks/builder'
-    pullPolicy: 'always'
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
