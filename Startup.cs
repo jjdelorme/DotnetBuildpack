@@ -34,7 +34,17 @@ namespace dotnet_buildpack
                 {
                     await context.Response.WriteAsync("Hello Azure!");
                 });
+
+                endpoints.MapGet("/price", GetBitcoinPriceAsync);
             });
+        }
+
+        private async Task GetBitcoinPriceAsync(HttpContext context)
+        {
+            var bitcoin = new BitcoinPrice();
+            CurrentPrice price = await bitcoin.GetPriceAsync();
+            string response = $"At {price.Updated} (GMT) the bitcoin price was {price.USD}";
+            await context.Response.WriteAsync(response);
         }
     }
 }
