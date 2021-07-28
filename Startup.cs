@@ -32,7 +32,7 @@ namespace dotnet_buildpack
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello GCP!");
+                    await context.Response.WriteAsync("Hello Azure!");
                 });
             });
         }
