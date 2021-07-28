@@ -15,7 +15,7 @@ steps:
 - task: BuildpacksTask@1
   inputs:
     command: 'build'
-    imageName: 'pricingapp'
+    imageName: 'gcr.io/idoflatow-sm-demos/pricingapp:v1'
     builder: 'gcr.io/buildpacks/builder'
 - task: Docker@2
   displayName: 'Login to Container Registry'
@@ -28,5 +28,5 @@ steps:
     command: push
     containerRegistry: gcr-connection
     container: pricingapp
-    repository: idoflatow-sm-demos
+    repository: idoflatow-sm-demos/pricingapp
     tags: v1
