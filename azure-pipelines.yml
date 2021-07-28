@@ -21,12 +21,10 @@ steps:
   displayName: 'Login to Container Registry'
   inputs:
     command: login
-    containerRegistry: gcr-connection
+    containerRegistry: 'gcr-connection'
 - task: Docker@2
   displayName: 'Push image'
   inputs:
     command: push
-    containerRegistry: gcr-connection
-    container: pricingapp
-    repository: idoflatow-sm-demos/pricingapp
+    repository: 'idoflatow-sm-demos/pricingapp'
     tags: v1
