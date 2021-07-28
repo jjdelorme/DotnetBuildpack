@@ -34,7 +34,16 @@ namespace dotnet_buildpack
                 {
                     await context.Response.WriteAsync("Hello GCP!");
                 });
+
+                endpoints.MapGet("/price", GetBitcoinPriceAsync);
             });
+        }
+
+        private async Task GetBitcoinPriceAsync(HttpContext context)
+        {
+            var bitcoin = new BitcoinPrice();
+            CurrentPrice price = await bitcoin.GetPriceAsync();
+            await context.Response.WriteAsync($"The current bitcoin price is {price.USD}");
         }
     }
 }
