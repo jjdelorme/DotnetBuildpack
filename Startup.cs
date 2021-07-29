@@ -38,7 +38,8 @@ namespace PricingApp
         {
             var bitcoin = new BitcoinPrice();
             CurrentPrice price = await bitcoin.GetPriceAsync();
-            string response = $"At {price.Updated} (GMT) the bitcoin price was {price.USD}";
+            string response = "<h1>Hello, masterclass!</h1>";
+            response += $"<p>At {price.Updated} (GMT) the bitcoin price was {price.USD}</p>";
             await context.Response.WriteAsync(response);
         }
     }
