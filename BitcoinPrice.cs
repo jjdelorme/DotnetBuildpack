@@ -1,12 +1,11 @@
 // https://api.coindesk.com/v1/bpi/currentprice.json
 
 using System;
-using System.IO;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace dotnet_buildpack
+namespace PricingApp
 {
     public class BitcoinPrice 
     {

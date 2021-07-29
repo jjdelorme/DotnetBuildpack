@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace dotnet_buildpack
+namespace PricingApp
 {
     public class Startup
     {
@@ -30,12 +30,7 @@ namespace dotnet_buildpack
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello Azure!");
-                });
-
-                endpoints.MapGet("/price", GetBitcoinPriceAsync);
+                endpoints.MapGet("/", GetBitcoinPriceAsync);
             });
         }
 
