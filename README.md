@@ -8,3 +8,6 @@ pack build my-app --builder gcr.io/buildpacks/builder
 ```
 
 There is a dotnet core 3.1 build pack available.  
+
+## Build using Google Cloud Build
+gcloud builds submit --pack=image=gcr.io/$PROJECT_ID/dotnetbuildpack
